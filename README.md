@@ -10,14 +10,23 @@ resources:
 - https://www.trovanorme.salute.gov.it/norme/renderPdf.spring?seriegu=SG&datagu=28/01/2013&redaz=13A00528&artp=1&art=1&subart=1&subart1=10&vers=1&prog=001
 
 
-objective n1: create a tibble from excel files
+objective n1: 
 
-  file: C_17_tavole_34_2_0_file  
-  sheets: from Tav_2.2.6 to Tav_2.2.6 (22)  
-  to do:  
-  
-    1- read sheets from row 4  
-    2- discard empty rows in column B  
-    3- rename columns A and B  
-    4- transform MDC class as new column group  
-    5- apply and repeat algorithm to all files  
+we analyze first the task "Acuti in regimo ordinario" 
+for each SDO excel file:  
+
+    1- select only sheet related to the task (2.2.6)
+    2- read sheets from row 4  
+    3- discard empty rows in column B  
+    4- rename columns A and B  
+    5- transform MDC class as new column group  
+    6- create new column with name task
+    7- create a tibble
+
+for each SDO excel file:
+
+    1- create a test to check data collected in R and overall summary in 2.2.5
+    
+for each SDO excel file:
+
+    1- enrich data collected in R from 2.2.6 with data in 2.2.7
