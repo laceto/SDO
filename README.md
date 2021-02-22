@@ -39,4 +39,7 @@ repeat the algo in n1 for all type of tasks remaining:
     2- Riabilitazione  2.3.6 and 2.3.7
     3- Lungodegenze 2.3.8
     
- 
+objective n3:
+read tables of hospedalization rates
+
+
