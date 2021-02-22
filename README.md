@@ -36,7 +36,7 @@ objective n2:
 repeat the algo in n1 for all type of tasks remaining:  
 
     1- Acuti in regime diurno (2.2.12: 2.2.12(17)) and for test 2.2.11
-    2- Riabilitazione  
-    3- Lungodegenze
+    2- Riabilitazione  2.3.6 and 2.3.7
+    3- Lungodegenze 2.3.8
     
  
