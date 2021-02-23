@@ -40,6 +40,12 @@ repeat the algo in n1 for all type of tasks remaining:
     3- Lungodegenze 2.3.8
     
 objective n3:
-read tables of hospedalization rates
+read tables of hospedalization rates (5.1, 5.10:5.21)
+read italian population table
+try to match rates from SDO with rates calculated
+
+objective n4:
+read distribution by age and gender (6.7:11)
+read discharge by regions 8.1pie:8.1sar
 
 
