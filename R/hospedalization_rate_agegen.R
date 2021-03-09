@@ -1,13 +1,13 @@
 # read tables: 5.12, 5.14, 5.16, 5.18, 5.20 (they are similar)
-
+# Tasso di ospedalizzazione per fasce di età e genere 
+# (per 1.000 abitanti) Attività per Acuti in Regime ordinario 
 hosp_reader_agegen <- function(x, y, year){
   
   raw_data <- readxl::read_xlsx(path = y, sheet = x,
                                 skip = 3) 
   
   raw_data <- raw_data %>% select(where(~!all(is.na(.)))) %>% 
-    drop_na() %>% 
-    slice(-n()) 
+    drop_na() 
   
   name <- names(raw_data)
   
@@ -48,7 +48,7 @@ hosp_reader_agegen <- function(x, y, year){
   
   all_data1 <- all_data1 %>%
     dplyr::bind_rows() %>%
-    dplyr::mutate(Year = year)
+    dplyr::mutate(ANNO = year)
   
 }
 
@@ -74,39 +74,3 @@ HR_agecat_gen <- purrr::pmap(list(table_list, activity_list), sdo_autom,
   view()
 
 
-# sheet_names = rep(list("Tav_5.12"), 4)
-# 
-# hosp_rate_5.12 <- purrr::pmap(list(sheet_names, files_names, Years), hosp_reader_agegen) %>%
-#   dplyr::bind_rows() %>%
-#   dplyr::mutate(Attività = "Acuti - Regime ordinario") 
-# 
-# 
-# sheet_names = rep(list("Tav_5.14"), 4)
-# 
-# hosp_rate_5.14 <- purrr::pmap(list(sheet_names, files_names, Years), hosp_reader_agegen) %>%
-#   dplyr::bind_rows() %>%
-#   dplyr::mutate(Attività = "Acuti - Regime diurno") 
-# 
-# sheet_names = rep(list("Tav_5.16"), 4)
-# 
-# hosp_rate_5.16 <- purrr::pmap(list(sheet_names, files_names, Years), hosp_reader_agegen) %>%
-#   dplyr::bind_rows() %>%
-#   dplyr::mutate(Attività = "Riabilitazione - Regime ordinario")
-# 
-# 
-# sheet_names = rep(list("Tav_5.18"), 4)
-# 
-# hosp_rate_5.18 <- purrr::pmap(list(sheet_names, files_names, Years), hosp_reader_agegen) %>%
-#   dplyr::bind_rows() %>%
-#   dplyr::mutate(Attività = "Riabilitazione - Regime diurno")     
-#   
-#   
-# sheet_names = rep(list("Tav_5.20"), 4)
-# 
-# hosp_rate_5.20 <- purrr::pmap(list(sheet_names, files_names, Years), hosp_reader_agegen) %>%
-#   dplyr::bind_rows() %>%
-#   dplyr::mutate(Attività = "Lungodegenza")  
-# 
-# HR_agecat_gen_old <- dplyr::bind_rows(hosp_rate_5.12, hosp_rate_5.14, hosp_rate_5.16,
-#                               hosp_rate_5.18, hosp_rate_5.20)
-# view(HR_agecat_gen)
