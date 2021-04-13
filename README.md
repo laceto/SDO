@@ -31,7 +31,7 @@ for each SDO excel file:
 
     1- enrich data collected in R from 2.2.6 with data in 2.2.7
     
-
+comparison with uk data
 objective n2:
 repeat the algo in n1 for all type of tasks remaining:  
 
